@@ -1,0 +1,27 @@
+{
+    "name": "jdwdev/wser_cm",
+    "description": "Web Service CM Timesharing",
+    "minimum-stability": "stable",
+    "authors": [{
+        "name": "Jackson Douglas B. Feijão", 
+        "email": "jkdouglas21@gmail.com", 
+        "role": "Developer"
+    }],
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "autoload": {
+        "psr-4": {
+            "Source\\Controllers\\":"source/controllers/",
+            "Source\\Database\\":"source/database/",
+            "Source\\Models\\":"source/models/"
+        },
+        "classmap": [
+            "app/services"
+        ],
+        "files": [
+            "boot/Config.php",
+            "boot/Helpers.php"
+        ]
+    }
+}
