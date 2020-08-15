@@ -37,8 +37,9 @@ class ComposerStaticInita43ef3aef121c8b6764e186310c40104
 
     public static $classMap = array (
         'ContratoServices' => __DIR__ . '/../..' . '/app/services/ContratoServices.php',
-        'MotivoService' => __DIR__ . '/../..' . '/app/services/MotivoServices.php',
-        'OcorrenciaService' => __DIR__ . '/../..' . '/app/services/OcorrenciaService.php',
+        'MotivoServices' => __DIR__ . '/../..' . '/app/services/MotivoServices.php',
+        'OcorrenciaServices' => __DIR__ . '/../..' . '/app/services/OcorrenciaServices.php',
+        'TSLancamentosServices' => __DIR__ . '/../..' . '/app/services/TSLancamentosServices.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

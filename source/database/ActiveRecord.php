@@ -47,8 +47,6 @@ abstract class ActiveRecord
         $sql = self::$sql;
         $fields = implode(", ", $fields);
         $sql = "SELECT {$fields} FROM ({$sql})";
-
-
         self::$sql = $sql;
     }
 

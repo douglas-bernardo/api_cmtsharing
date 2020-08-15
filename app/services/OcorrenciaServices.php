@@ -2,7 +2,7 @@
 
 use Source\Models\CmMap;
 
-class OcorrenciaService
+class OcorrenciaServices
 {
     /**
      * Provide view file name stored on /resources
@@ -17,23 +17,25 @@ class OcorrenciaService
      * @var array
      */
     private static $fields = [
-        "idvendaxcontrato",
-        "idvendats",
-        "numero_ocorrencia", 
-        "status", 
-        "ts_motivo_id", 
+        "numero_ocorrencia",
+        "idvendats", 
+        "idvendaxcontrato",        
+        "status",
+        "idmotivots", 
         "dtocorrencia",
-        "ts_cliente_id",
+        "idpessoa_cliente",
         "nome_cliente",
-        "numero_projeto",
-        "numero_contrato",
-        "nome_projeto",
-        "valor_venda_view",
-        "ts_usuario_resp_id",
-        "ts_usuario_resp_nome"
+        "numeroprojeto",
+        "numerocontrato",
+        "nomeprojeto",
+        "valor_venda",
+        "idusuario_resp",
+        "nomeusuario_resp",
+        "idusuario_cadastro",
+        "nomeusuario_cadastro"
     ];
 
-    public static function import()
+    public static function getData()
     {
         $cm_data = new CmMap(self::$view);
         $cm_data->setFields(self::$fields);

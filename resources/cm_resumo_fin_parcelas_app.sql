@@ -1,0 +1,114 @@
+/* - App: renegociacao
+ * - Relação de parcelas de acordo com o IDVENDATS
+ * - Derivado da query cm_resumo_financeiro
+ */
+SELECT
+*
+FROM
+(SELECT L.IDLANCAMENTOTS,
+        L.CODDOCUMENTO,
+        L.IDVENDATS,
+        L.VLRLANCAMENTO AS VLRORIGINAL,     
+                                    
+       CASE WHEN L.IDLANCESTORNO IS NULL THEN 
+         CASE WHEN L.IDMOTIVOESTORNO IS NULL THEN 
+           CASE WHEN T.DESCRICAO IS NULL THEN FP.DESCRICAO ELSE T.DESCRICAO END 
+         ELSE 
+           'Estorno de '||T.DESCRICAO 
+         END
+       ELSE 
+        'E '||T.DESCRICAO 
+       END AS DESCRICAO,                                    
+
+       CASE WHEN CAR.SALDOCAR           IS NULL THEN 0 ELSE CAR.SALDOCAR           END AS SALDOCAR,        
+       CASE WHEN CAR.VALORPAGOCAR       IS NULL THEN 0 ELSE CAR.VALORPAGOCAR       END AS VALORPAGOCAR,
+              
+       CASE WHEN L.CODDOCUMENTO IS NULL THEN
+         CASE WHEN P.DATASISTEMA = L.DATALANCAMENTO THEN 
+           CASE WHEN T.CODTIPDOC IS NULL THEN 
+             'Nao integrado' 
+           ELSE 
+             CASE WHEN L.IDMOTIVOESTORNO IS NULL THEN 
+               CASE WHEN (CASE WHEN L.FLGMIGRADO IS NULL THEN 'N' ELSE L.FLGMIGRADO END) = 'N' THEN 
+                 'Aguardando auditoria' 
+               ELSE 
+                 'Nao integrado' 
+               END 
+             ELSE
+               'Nao integrado'
+             END   
+           END   
+         ELSE 
+           'Nao integrado' 
+         END
+       ELSE
+         CASE WHEN CASE WHEN CAR.ESTORNADO IS NULL THEN 'N' ELSE CAR.ESTORNADO END = 'N' THEN
+           CASE WHEN CASE WHEN CAR.SALDOCAR IS NULL THEN 0 ELSE CAR.SALDOCAR END = 0 THEN
+             CASE WHEN CASE WHEN CAR.TOTALCANCELAMENTOS IS NULL THEN 0 ELSE CAR.TOTALCANCELAMENTOS END = 0 THEN
+               'Quitado' 
+             ELSE 
+               'Cancelado'
+             END   
+           ELSE
+             CASE WHEN CASE WHEN CAR.NUMFATURA IS NULL THEN 0 ELSE CAR.NUMFATURA END = 0 THEN 
+               'Em aberto'
+             ELSE
+               'Quitado'
+             END  
+           END   
+         ELSE
+           'Cancelado'
+         END  
+       END AS STATUSCAR,
+       CAR.DATAPROGRAMADA
+              
+  FROM LANCAMENTOTS L, VENDATS V, TIPODEBCREDHOTEL T, FORMAPAGTOTS FP, PARAMTS P, AJUSTEFINANCTS AJ,
+       (SELECT CASE WHEN (SUM(CASE WHEN TOT.OPERACAO = 2 THEN
+                              CASE WHEN TOT.ESTORNO IS NULL THEN 0 ELSE 1 END
+                                ELSE 0 END 
+                               ) ) = 0 THEN 'N' ELSE 'S' END AS ESTORNADO,
+                               
+               TOT.CODDOCUMENTO, TOT.IDFORCLI, TOT.DATAVENCTO, TOT.DATAPROGRAMADA,                               
+                
+               SUM( CASE WHEN TOT.OPERACAO = 3 THEN TO_NUMBER(TOT.VALOR) ELSE 0 END) AS TOTALPARCELAS,
+               SUM( CASE WHEN TOT.OPERACAO = 4 THEN TO_NUMBER(TOT.VALOR) * TOT.CANCELAMENTO ELSE 0 END ) AS TOTALCANCELAMENTOS,
+               SUM( CASE WHEN TOT.OPERACAO = 3 THEN 0 ELSE CASE WHEN TOT.OPERACAO = 4 THEN TOT.VALOR * TOT.OUTROS ELSE TOT.VALOR END END ) AS TOTALOUTROS,
+               SUM(TOT.VALOR) AS SALDOCAR,
+                                
+               SUM(TO_NUMBER( CASE WHEN TOT.OPERACAO = '10' THEN 
+                                TOT.VALOR 
+                              ELSE 
+                                TO_NUMBER( CASE WHEN TOT.DEBCRE = 'C' THEN TOT.VALOR*-1 ELSE TOT.VALOR END )  
+                              END ) * TO_NUMBER( CASE WHEN OPERACAO = '5 ' THEN 1 
+                                                      WHEN OPERACAO = '10' THEN 1  
+                                                      WHEN OPERACAO = '15' THEN 1 ELSE 0 END)) AS VALORPAGOCAR,                                   
+                
+               TOT.DATABAIXA, TOT.CONTABAIXA, TOT.NUMFATURA
+          FROM
+               (SELECT L.OPERACAO, ESTORNO, D.CODDOCUMENTO, D.IDFORCLI, D.DATAVENCTO, D.DATAPROGRAMADA, L.DEBCRE,
+                       CASE WHEN L.VALOR IS NULL THEN 0 ELSE CASE WHEN L.DEBCRE = 'D' THEN L.VALOR ELSE -L.VALOR END END VALOR,            
+                       L.CODALTERADOR, A.IDAGENCIATS, L.NUMLANCTO, D.NUMFATURA, BAIXA.DATABAIXA, BAIXA.CONTABAIXA,
+                       (SELECT CASE WHEN SUM(1) IS NULL THEN 0 WHEN SUM(1) = 0 THEN 0 ELSE 1 END FROM TIPOALTERCANCEL TC WHERE TC.CODALTERADOR = L.CODALTERADOR AND TC.IDAGENCIATS = A.IDAGENCIATS) AS CANCELAMENTO,            
+                       (SELECT CASE WHEN SUM(1) IS NULL THEN 1 WHEN SUM(1) = 0 THEN 1 ELSE 0 END FROM TIPOALTERCANCEL TC WHERE TC.CODALTERADOR = L.CODALTERADOR AND TC.IDAGENCIATS = A.IDAGENCIATS) AS OUTROS
+            
+                  FROM DOCUMENTO D, LANCTODOCUM L, LANCAMENTOTS LTS, VENDATS V, ATENDCLIENTETS A,
+                       (SELECT R.CODDOCUMENTO, MAX(R.DATABAIXA) AS DATABAIXA, MAX(P.DESCRICAO) AS CONTABAIXA FROM RECBTOPAGTO R, PORTADORFORMA P, LANCTODOCUM L WHERE R.CODPORTFORMA = P.CODPORTFORMA AND R.NUMLANCTO = L.NUMLANCTO AND L.ESTORNO IS NULL GROUP BY R.CODDOCUMENTO) BAIXA
+                 WHERE V.IDVENDATS = PARAM_IDVENDATS
+                   AND A.IDATENDCLIENTETS = V.IDATENDCLIENTETS  
+                   AND LTS.IDVENDATS      = V.IDVENDATS         
+                   AND D.CODDOCUMENTO     = L.CODDOCUMENTO      
+                   AND LTS.CODDOCUMENTO   = D.CODDOCUMENTO      
+                   AND D.RECPAG           = 'R'                 
+                   AND D.CODDOCUMENTO     = BAIXA.CODDOCUMENTO (+)
+                   AND D.IDPESSOA         = 1 ) TOT
+      GROUP BY TOT.IDFORCLI, TOT.CODDOCUMENTO, TOT.DATAVENCTO, TOT.DATAPROGRAMADA, TOT.DATABAIXA, TOT.CONTABAIXA, TOT.NUMFATURA) CAR
+ WHERE V.IDVENDATS = PARAM_IDVENDATS
+   AND L.IDTIPODEBCRED    = T.IDTIPODEBCRED (+)
+   AND L.IDHOTEL          = T.IDHOTEL (+)
+   AND L.CODDOCUMENTO     = CAR.CODDOCUMENTO (+)
+   AND L.IDAJUSTEFINANCTS = AJ.IDAJUSTEFINANCTS (+)
+   AND L.IDFORMAPAGTO     = FP.IDFORMAPAGTO (+)
+   AND P.IDHOTEL          = L.IDHOTEL
+   AND L.IDVENDATS        = V.IDVENDATS
+   AND ((L.FLGREMOVIDO IS NULL) OR (L.FLGREMOVIDO IS NOT NULL AND (L.IDLANCESTORNO IS NULL AND L.IDMOTIVOESTORNO IS NULL) ))
+ ORDER BY L.IDLANCAMENTOTS) WHERE STATUSCAR IN ('Quitado', 'Em aberto')

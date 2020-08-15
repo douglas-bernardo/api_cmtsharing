@@ -7,6 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'ContratoServices' => $baseDir . '/app/services/ContratoServices.php',
-    'MotivoService' => $baseDir . '/app/services/MotivoServices.php',
-    'OcorrenciaService' => $baseDir . '/app/services/OcorrenciaService.php',
+    'MotivoServices' => $baseDir . '/app/services/MotivoServices.php',
+    'OcorrenciaServices' => $baseDir . '/app/services/OcorrenciaServices.php',
+    'TSLancamentosServices' => $baseDir . '/app/services/TSLancamentosServices.php',
 );
