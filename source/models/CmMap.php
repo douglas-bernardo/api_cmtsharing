@@ -9,11 +9,11 @@ class CmMap extends ActiveRecord
 
     public function __construct($view, $param = null) 
     {
-        $sql = getStringSql($view);
-        if ($param) {
-            $sql = str_replace($param[0], $param[1], $sql);
-        }
-        parent::__construct($sql);
+        // $sql = file_get_string_sql($view);
+        // if ($param) {
+        //     $sql = str_replace($param[0], $param[1], $sql);
+        // }
+        parent::__construct($view);
     }
     
 }

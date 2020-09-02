@@ -3,8 +3,8 @@
     "description": "Web Service CM Timesharing",
     "minimum-stability": "stable",
     "authors": [{
-        "name": "Jackson Douglas B. Feijão", 
-        "email": "jkdouglas21@gmail.com", 
+        "name": "Jackson Douglas B. Feijão",
+        "email": "jkdouglas21@gmail.com",
         "role": "Developer"
     }],
     "config": {
@@ -23,5 +23,10 @@
             "boot/Config.php",
             "boot/Helpers.php"
         ]
+    },
+    "require": {
+        "monolog/monolog": "^2.1",
+      "ext-json": "*",
+        "ext-oci8": "*"
     }
 }

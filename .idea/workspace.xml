@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="65ecaace-2aa0-418e-bd27-dde160c88dd4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/wser_cm.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/ContratoServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/ContratoServices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/MotivoServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/MotivoServices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/OcorrenciaServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/OcorrenciaServices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/TSLancamentosServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/TSLancamentosServices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/boot/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/boot/Helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/cm_ocorrencias_ts_renegociacao_app.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cm_ocorrencias_ts_renegociacao_app.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/cm_resumo_fin_parcelas_app.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cm_resumo_fin_parcelas_app.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/cm_resumo_financeiro_dtvenda_app.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cm_resumo_financeiro_dtvenda_app.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/motivots.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/database/ActiveRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/database/ActiveRecord.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/models/CmMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/models/CmMap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable path="composer" />
+    </execution>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="composer.json" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1gYGWbPs1HQXQivtbGdX1d6uFpi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="oracle" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/cm_ocorrencias_ts_renegociacao_app.sql" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="database.main" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="65ecaace-2aa0-418e-bd27-dde160c88dd4" name="Default Changelist" comment="" />
+      <created>1598284145219</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598284145219</updated>
+      <workItem from="1598284146822" duration="10623000" />
+      <workItem from="1598355983821" duration="33000" />
+      <workItem from="1598363551159" duration="1598000" />
+      <workItem from="1598365256067" duration="65000" />
+      <workItem from="1598365339554" duration="62000" />
+      <workItem from="1598365424748" duration="186000" />
+      <workItem from="1598366039854" duration="6140000" />
+      <workItem from="1598473355624" duration="790000" />
+      <workItem from="1598984088355" duration="2984000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="521" y="282" width="356" height="227" key="#Composer" timestamp="1598284159303">
+      <screen x="43" y="26" width="1323" height="742" />
+    </state>
+    <state x="521" y="282" width="356" height="227" key="#Composer/43.26.1323.742@43.26.1323.742" timestamp="1598284159303" />
+    <state x="333" y="77" width="732" height="637" key="#Inspections" timestamp="1598286305247">
+      <screen x="43" y="26" width="1323" height="742" />
+    </state>
+    <state x="333" y="77" width="732" height="637" key="#Inspections/43.26.1323.742@43.26.1323.742" timestamp="1598286305247" />
+    <state x="2219" y="370" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598369145148">
+      <screen x="1920" y="312" width="1366" height="768" />
+    </state>
+    <state x="2219" y="370" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.312.1366.768/0.338.1920.742@1920.312.1366.768" timestamp="1598369145148" />
+    <state x="496" y="312" width="406" height="168" key="ComposerInitDialogKey" timestamp="1598284717333">
+      <screen x="43" y="26" width="1323" height="742" />
+    </state>
+    <state x="496" y="312" width="406" height="168" key="ComposerInitDialogKey/43.26.1323.742@43.26.1323.742" timestamp="1598284717333" />
+    <state x="2407" y="467" width="424" height="491" key="FileChooserDialogImpl" timestamp="1598369236587">
+      <screen x="1920" y="312" width="1366" height="768" />
+    </state>
+    <state x="2407" y="467" width="424" height="491" key="FileChooserDialogImpl/1920.312.1366.768/0.338.1920.742@1920.312.1366.768" timestamp="1598369236587" />
+    <state width="876" height="209" key="GridCell.Tab.0.bottom" timestamp="1598369475759">
+      <screen x="1920" y="312" width="1366" height="768" />
+    </state>
+    <state width="876" height="209" key="GridCell.Tab.0.bottom/1920.312.1366.768/0.338.1920.742@1920.312.1366.768" timestamp="1598369475759" />
+    <state width="876" height="209" key="GridCell.Tab.0.center" timestamp="1598369475759">
+      <screen x="1920" y="312" width="1366" height="768" />
+    </state>
+    <state width="876" height="209" key="GridCell.Tab.0.center/1920.312.1366.768/0.338.1920.742@1920.312.1366.768" timestamp="1598369475759" />
+    <state width="876" height="209" key="GridCell.Tab.0.left" timestamp="1598369475759">
+      <screen x="1920" y="312" width="1366" height="768" />
+    </state>
+    <state width="876" height="209" key="GridCell.Tab.0.left/1920.312.1366.768/0.338.1920.742@1920.312.1366.768" timestamp="1598369475759" />
+    <state width="876" height="209" key="GridCell.Tab.0.right" timestamp="1598369475759">
+      <screen x="1920" y="312" width="1366" height="768" />
+    </state>
+    <state width="876" height="209" key="GridCell.Tab.0.right/1920.312.1366.768/0.338.1920.742@1920.312.1366.768" timestamp="1598369475759" />
+    <state x="2106" y="338" width="962" height="737" key="SettingsEditor" timestamp="1598369448592">
+      <screen x="1920" y="312" width="1366" height="768" />
+    </state>
+    <state x="2106" y="338" width="962" height="737" key="SettingsEditor/1920.312.1366.768/0.338.1920.742@1920.312.1366.768" timestamp="1598369448592" />
+    <state x="223" y="31" key="SettingsEditor/43.26.1323.742@43.26.1323.742" timestamp="1598296945899" />
+    <state x="143" y="124" width="1123" height="544" key="dock-window-1" timestamp="1598285757482">
+      <screen x="43" y="26" width="1323" height="742" />
+    </state>
+    <state x="143" y="124" width="1123" height="544" key="dock-window-1/43.26.1323.742@43.26.1323.742" timestamp="1598285757482" />
+    <state x="367" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1598293990046">
+      <screen x="43" y="26" width="1323" height="742" />
+    </state>
+    <state x="367" y="89" width="672" height="678" key="search.everywhere.popup/43.26.1323.742@43.26.1323.742" timestamp="1598293990046" />
+  </component>
+</project>

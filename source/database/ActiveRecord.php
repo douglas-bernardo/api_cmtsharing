@@ -6,20 +6,20 @@ use Exception;
 
 abstract class ActiveRecord
 {
-    /** @var object|null */
-    protected $data;
-
-    /** @var \Exception|null */
-    protected static $fail;
-
-    /** @var string|null */
-    protected $message;
 
     /** @var string */
     private static $sql;
 
     /** @var int|null */
-    protected static $nresults;
+    protected $rows;
+
+    /**
+     * Store parameters to be replaced in sql statements 
+     * On pattern, key => value
+     * 
+     * @var array
+     */
+    protected $parameters = [];
 
     public function __construct(string $sql, $filter = null)
     {
@@ -32,16 +32,25 @@ abstract class ActiveRecord
 
     }
 
+    /**
+     * @param string $param
+     * @param $value
+     */
+    public function setParameter(string $param, $value): void
+    {
+        if (!isset($this->parameters[$param])) {
+            $this->parameters[$param] = $value;
+        }
+    }
+
     public function setFields(array $fields): void
     {   
         if (!is_array($fields)) {
             throw new Exception("Method must receive parameter of type array");
-            return;
         }
 
         if (empty($fields)) {
             throw new Exception("array empty");
-            return;
         }
 
         $sql = self::$sql;
@@ -50,14 +59,9 @@ abstract class ActiveRecord
         self::$sql = $sql;
     }
 
-    /**
-     * Undocumented function
-     *
-     * @return object|null
-     */
-    public function data(): ?object
+    public function getTotal(): ? int
     {
-        return $this->data;
+        return $this->rows;
     }
 
     public function load()
@@ -67,14 +71,16 @@ abstract class ActiveRecord
             $conn = ConnectOracle::connectOracleDB();
             $stmt = ConnectOracle::parse($conn, "ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD'");
             ConnectOracle::execute($stmt);
-            $stmt = ConnectOracle::parse($conn, self::$sql);
+            $sql = $this->prepare();
+            $stmt = ConnectOracle::parse($conn, $sql);
 
             if (!ConnectOracle::execute($stmt)) {
                 ConnectOracle::closeCMConnection();
-                throw new Exception("Erro na execução");
+                throw new Exception("Oci execute error");
             }
 
             if ($object = oci_fetch_object($stmt)) {
+                $this->rows = 1;
                 return $object;
             }
 
@@ -85,51 +91,60 @@ abstract class ActiveRecord
         } catch (Exception $e) {
             $message = $e->getMessage();
             //$trace = $e->getTraceAsString();
-            $response = ['exception' => ['class' => __CLASS__, 'method' => __METHOD__, 'data' => $message]];
-            return $response;
+            $response = ['exception' => ['class' => __CLASS__, 
+                                         'method' => __METHOD__, 
+                                         'data' => $message]];
+            return (object) $response;
         }
 
     }
 
-    public static function all()
+    /**
+     * Use param: ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD',
+     * to format date return on results
+     *
+     * @return array|object
+     */
+    public function all()
     {
         try {
-
             $results = array();
-            $conn = ConnectOracle::connectOracleDB();            
-            //conversão dos campos com formato de data
+            $conn = ConnectOracle::connectOracleDB();
             $stmt = ConnectOracle::parse($conn, "ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD'");
             ConnectOracle::execute($stmt);
-
-            $stmt = ConnectOracle::parse($conn, self::$sql);
-
+            $sql = $this->prepare();
+            $stmt = ConnectOracle::parse($conn, $sql);
             if (!ConnectOracle::execute($stmt)) {
                 ConnectOracle::closeCMConnection();
-                throw new Exception("Erro na execução");
-            }           
-
-           $rows = oci_fetch_all($stmt, $results, null, null, OCI_FETCHSTATEMENT_BY_ROW);
-
-            // if ($rows>0) {
-            //    self::$nresults = $rows;
-            // }
-
-            // while (($row = oci_fetch_array($stmt, OCI_ASSOC)) != false) {
-            //     $results[] = $row;
-            // }
+                throw new Exception("Oci execute error");
+            }
+            $rows = oci_fetch_all($stmt, $results, null, null, OCI_FETCHSTATEMENT_BY_ROW);
             
-            self::$nresults = count($results);
-
+            $this->rows = $rows;
             ConnectOracle::closeCMConnection();
-            
             return $results;
 
         } catch (Exception $e) {
             $message = $e->getMessage();
-            //$trace = $e->getTraceAsString();
-            $response = ['exception' => ['class' => __CLASS__, 'method' => __METHOD__, 'data' => $message]];
-            return $response;
+            $response = ['exception' => ['class' => __CLASS__, 
+                                         'method' => __METHOD__, 
+                                         'data' => $message]];
+            return (object) $response;
         }
     }
 
+    /**
+     * Checks if there are parameters to be replaced in sql string
+     * @return string
+     */
+    private function prepare():string
+    {
+        $sql = self::$sql;
+        if ($this->parameters) {
+            foreach ($this->parameters as $param => $value) {
+                $sql = str_replace($param, $value, $sql);
+            }
+        }
+        return $sql;
+    }
 }

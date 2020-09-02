@@ -9,4 +9,6 @@ return array(
     'Source\\Models\\' => array($baseDir . '/source/models'),
     'Source\\Database\\' => array($baseDir . '/source/database'),
     'Source\\Controllers\\' => array($baseDir . '/source/controllers'),
+    'Psr\\Log\\' => array($vendorDir . '/psr/log/Psr/Log'),
+    'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
 );

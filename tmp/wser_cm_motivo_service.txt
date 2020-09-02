@@ -1,0 +1,1 @@
+[2020-08-25T12:35:57.178085-03:00] motivo_services.INFO: Import error {"description":{"stdClass":{"exception":{"class":"Source\\Database\\ActiveRecord","method":"Source\\Database\\ActiveRecord::all","data":"Erro ao conectar ao servidor usando a extensão OCI - ORA-12545: Connect failed because target host or object does not exist"}}}} []
