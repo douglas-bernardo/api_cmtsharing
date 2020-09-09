@@ -55,6 +55,7 @@ class ComposerStaticInita43ef3aef121c8b6764e186310c40104
         'ContratoServices' => __DIR__ . '/../..' . '/app/services/ContratoServices.php',
         'MotivoServices' => __DIR__ . '/../..' . '/app/services/MotivoServices.php',
         'OcorrenciaServices' => __DIR__ . '/../..' . '/app/services/OcorrenciaServices.php',
+        'ProjetoTsService' => __DIR__ . '/../..' . '/app/services/ProjetoTsService.php',
         'TSLancamentosServices' => __DIR__ . '/../..' . '/app/services/TSLancamentosServices.php',
     );
 

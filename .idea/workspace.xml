@@ -20,26 +20,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65ecaace-2aa0-418e-bd27-dde160c88dd4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/wser_cm.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/ContratoServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/ContratoServices.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/services/MotivoServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/MotivoServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/OcorrenciaServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/OcorrenciaServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/services/TSLancamentosServices.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/TSLancamentosServices.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/boot/Helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/boot/Helpers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cm_ocorrencias_ts_renegociacao_app.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cm_ocorrencias_ts_renegociacao_app.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cm_resumo_fin_parcelas_app.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cm_resumo_fin_parcelas_app.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/cm_resumo_financeiro_dtvenda_app.sql" beforeDir="false" afterPath="$PROJECT_DIR$/resources/cm_resumo_financeiro_dtvenda_app.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/motivots.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/database/ActiveRecord.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/database/ActiveRecord.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/models/CmMap.php" beforeDir="false" afterPath="$PROJECT_DIR$/source/models/CmMap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/wser_cm_contrato_services.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wser_cm_contrato_services.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/wser_cm_lancamentos_service.txt" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/wser_cm_lancamentos_service.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +71,7 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="database.main" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -105,6 +92,8 @@
       <workItem from="1598366039854" duration="6140000" />
       <workItem from="1598473355624" duration="790000" />
       <workItem from="1598984088355" duration="2984000" />
+      <workItem from="1599056625032" duration="99000" />
+      <workItem from="1599651015524" duration="3774000" />
     </task>
     <servers />
   </component>
@@ -132,6 +121,10 @@
       <screen x="43" y="26" width="1323" height="742" />
     </state>
     <state x="333" y="77" width="732" height="637" key="#Inspections/43.26.1323.742@43.26.1323.742" timestamp="1598286305247" />
+    <state x="51" y="249" width="1305" height="293" key="#SQL_Dialects" timestamp="1599651487771">
+      <screen x="51" y="26" width="1315" height="742" />
+    </state>
+    <state x="51" y="249" width="1305" height="293" key="#SQL_Dialects/51.26.1315.742@51.26.1315.742" timestamp="1599651487771" />
     <state x="2219" y="370" width="800" height="684" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598369145148">
       <screen x="1920" y="312" width="1366" height="768" />
     </state>
@@ -160,18 +153,35 @@
       <screen x="1920" y="312" width="1366" height="768" />
     </state>
     <state width="876" height="209" key="GridCell.Tab.0.right/1920.312.1366.768/0.338.1920.742@1920.312.1366.768" timestamp="1598369475759" />
+    <state x="512" y="122" width="382" height="548" key="NewPhpClassDialog" timestamp="1599651774396">
+      <screen x="51" y="26" width="1315" height="742" />
+    </state>
+    <state x="512" y="122" width="382" height="548" key="NewPhpClassDialog/51.26.1315.742@51.26.1315.742" timestamp="1599651774396" />
+    <state x="522" y="322" width="363" height="147" key="NewPhpFileDialog" timestamp="1599651736335">
+      <screen x="51" y="26" width="1315" height="742" />
+    </state>
+    <state x="522" y="322" width="363" height="147" key="NewPhpFileDialog/51.26.1315.742@51.26.1315.742" timestamp="1599651736335" />
     <state x="2106" y="338" width="962" height="737" key="SettingsEditor" timestamp="1598369448592">
       <screen x="1920" y="312" width="1366" height="768" />
     </state>
     <state x="2106" y="338" width="962" height="737" key="SettingsEditor/1920.312.1366.768/0.338.1920.742@1920.312.1366.768" timestamp="1598369448592" />
     <state x="223" y="31" key="SettingsEditor/43.26.1323.742@43.26.1323.742" timestamp="1598296945899" />
+    <state x="302" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1599056659844">
+      <screen x="49" y="26" width="1317" height="742" />
+    </state>
+    <state x="302" y="133" width="800" height="535" key="Vcs.Push.Dialog.v2/49.26.1317.742@49.26.1317.742" timestamp="1599056659844" />
     <state x="143" y="124" width="1123" height="544" key="dock-window-1" timestamp="1598285757482">
       <screen x="43" y="26" width="1323" height="742" />
     </state>
     <state x="143" y="124" width="1123" height="544" key="dock-window-1/43.26.1323.742@43.26.1323.742" timestamp="1598285757482" />
-    <state x="367" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1598293990046">
-      <screen x="43" y="26" width="1323" height="742" />
+    <state x="372" y="175" key="run.anything.popup" timestamp="1599651495940">
+      <screen x="51" y="26" width="1315" height="742" />
+    </state>
+    <state x="372" y="175" key="run.anything.popup/51.26.1315.742@51.26.1315.742" timestamp="1599651495940" />
+    <state x="373" y="89" width="668" height="678" key="search.everywhere.popup" timestamp="1599651631676">
+      <screen x="51" y="26" width="1315" height="742" />
     </state>
     <state x="367" y="89" width="672" height="678" key="search.everywhere.popup/43.26.1323.742@43.26.1323.742" timestamp="1598293990046" />
+    <state x="373" y="89" width="668" height="678" key="search.everywhere.popup/51.26.1315.742@51.26.1315.742" timestamp="1599651631676" />
   </component>
 </project>

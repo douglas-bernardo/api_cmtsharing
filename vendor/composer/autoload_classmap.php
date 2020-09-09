@@ -9,5 +9,6 @@ return array(
     'ContratoServices' => $baseDir . '/app/services/ContratoServices.php',
     'MotivoServices' => $baseDir . '/app/services/MotivoServices.php',
     'OcorrenciaServices' => $baseDir . '/app/services/OcorrenciaServices.php',
+    'ProjetoTsService' => $baseDir . '/app/services/ProjetoTsService.php',
     'TSLancamentosServices' => $baseDir . '/app/services/TSLancamentosServices.php',
 );
